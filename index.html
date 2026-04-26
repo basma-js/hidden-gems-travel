@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hidden Gems Travel Guide</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main class="page-wrapper">
+
+    <section class="hero-section">
+      <div class="hero-content">
+        <p class="small-title">Hidden Gems Travel Guide</p>
+
+        <h1>Discover the World's <span>Hidden</span> Wonders</h1>
+
+        <p class="hero-text">
+          Find unique destinations, colorful cultures, and unforgettable travel ideas based on your trip style, season, and budget.
+        </p>
+      </div>
+
+      <form id="tripForm" class="trip-form">
+        <h2>Choose Your Travel Preferences</h2>
+
+        <div class="form-group">
+          <label for="travelType">Travel Type</label>
+          <select id="travelType" required>
+            <option value="">Select travel type</option>
+            <option value="Family">Family Trip</option>
+            <option value="Friends">Friends Trip</option>
+            <option value="Honeymoon">Honeymoon Trip</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="travelMonth">Travel Month</label>
+          <select id="travelMonth" required>
+            <option value="">Select month</option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="budget">Budget Level</label>
+          <select id="budget" required>
+            <option value="">Select budget</option>
+            <option value="Low">Low Budget</option>
+            <option value="Medium">Medium Budget</option>
+            <option value="High">High Budget</option>
+          </select>
+        </div>
+
+        <button type="submit" class="submit-btn">Find Destinations</button>
+
+        <p id="formMessage" class="form-message"></p>
+      </form>
+    </section>
+
+    <section id="continentsSection" class="travel-zones hidden">
+      <p class="small-title">Next Stop</p>
+      <h2>Choose Your Travel Zone</h2>
+
+      <div class="zone-grid">
+
+        <div class="zone-row top">
+          <div class="zone-card asia" data-continent="Asia">
+            <span class="stamp">PASSPORT STAMP</span>
+            <div class="zone-icon">🏯</div>
+            <h3>Asia</h3>
+            <p>Hover to reveal hidden destinations</p>
+            <div class="country-tags">
+            </div>
+          </div>
+
+          <div class="zone-card africa" data-continent="Africa">
+            <span class="stamp">PASSPORT STAMP</span>
+            <div class="zone-icon">🦒</div>
+            <h3>Africa</h3>
+            <p>Wild nature and rare experiences</p>
+            <div class="country-tags">
+            </div>
+          </div>
+
+          <div class="zone-card europe" data-continent="Europe">
+            <span class="stamp">PASSPORT STAMP</span>
+            <div class="zone-icon">🏰</div>
+            <h3>Europe</h3>
+            <p>Old cities and scenic escapes</p>
+            <div class="country-tags">
+            </div>
+          </div>
+        </div>
+
+        <div class="zone-row bottom">
+          <div class="zone-card latin" data-continent="Latin America">
+            <span class="stamp">PASSPORT STAMP</span>
+            <div class="zone-icon">🌋</div>
+            <h3>Latin America</h3>
+            <p>Culture, color, and adventure</p>
+            <div class="country-tags">
+            </div>
+          </div>
+
+          <div class="zone-card oceania" data-continent="Oceania">
+            <span class="stamp">PASSPORT STAMP</span>
+            <div class="zone-icon">🐚</div>
+            <h3>Oceania</h3>
+            <p>Islands, beaches, and nature</p>
+            <div class="country-tags">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

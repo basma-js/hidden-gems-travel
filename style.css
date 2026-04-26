@@ -1,0 +1,597 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  min-height: 100vh;
+  color: #18302f;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 126, 87, 0.28), transparent 28%),
+    radial-gradient(circle at 78% 15%, rgba(66, 178, 173, 0.25), transparent 30%),
+    radial-gradient(circle at 65% 85%, rgba(255, 196, 87, 0.28), transparent 32%),
+    linear-gradient(135deg, #fff7ec 0%, #eef9f4 48%, #fff0df 100%);
+}
+
+.page-wrapper {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+  padding: 60px 0;
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 50px;
+  align-items: center;
+  min-height: 85vh;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("travel.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  opacity: 0.22;
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-left: 10px;
+}
+
+.small-title {
+  color: #ff7a45;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  line-height: 1.05;
+  margin-bottom: 22px;
+  color: #162b2c;
+  max-width: 620px;
+}
+
+.hero-content h1 span {
+  color: #ff7a45;
+  position: relative;
+}
+
+.hero-content h1 span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 196, 87, 0.45);
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.hero-text {
+  font-size: 19px;
+  color: #4d6663;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.hero-content::after {
+  content: "✈︎";
+  position: absolute;
+  font-size: 85px;
+  color: #ff7a45;
+  opacity: 0.9;
+  right: 80px;
+  bottom: -60px;
+  transform: rotate(-18deg);
+  text-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 90px;
+  border-bottom: 3px dashed #4db6ac;
+  border-radius: 50%;
+  right: 100px;
+  bottom: -10px;
+  transform: rotate(-15deg);
+  opacity: 0.8;
+}
+
+.trip-form {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.trip-form h2 {
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #d7ded9;
+  border-radius: 14px;
+  font-size: 15px;
+  background: white;
+  outline: none;
+}
+
+.form-group select:focus {
+  border-color: #ff7a45;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ff7a45, #ffb347);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.form-message {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-message.success {
+  color: #2f7d4f;
+}
+
+.form-message.error {
+  color: #c0392b;
+}
+
+.hidden {
+  display: none;
+}
+
+.travel-zones {
+  margin: 70px auto 80px;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.travel-zones h2 {
+  font-size: 42px;
+  color: #162b2c;
+  margin-bottom: 35px;
+}
+
+.zone-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.zone-row {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.zone-card {
+  min-height: 260px;
+  padding: 24px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.09);
+  border: 2px dashed rgba(255, 122, 69, 0.35);
+  cursor: pointer;
+  transition: 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.zone-row.top .zone-card {
+  width: 230px;
+}
+
+.zone-row.bottom .zone-card {
+  width: 260px;
+}
+
+.zone-card::before {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  right: -45px;
+  top: -45px;
+  background: rgba(255, 122, 69, 0.15);
+}
+
+.zone-card:hover {
+  transform: translateY(-10px) rotate(-1deg);
+  border-color: #ff7a45;
+}
+
+.stamp {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #ff7a45;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.zone-icon {
+  font-size: 46px;
+  margin-bottom: 12px;
+}
+
+.zone-card h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: #18302f;
+}
+
+.zone-card p {
+  color: #5d6d68;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.country-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: 0.3s ease;
+}
+
+.zone-card:hover .country-tags {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.country-tags span {
+  background: #fff4e6;
+  color: #ff7a45;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.asia { background: linear-gradient(145deg, #fff7e8, #ffffff); }
+.africa { background: linear-gradient(145deg, #fff0df, #ffffff); }
+.europe { background: linear-gradient(145deg, #eef7ff, #ffffff); }
+.latin { background: linear-gradient(145deg, #f3fff3, #ffffff); }
+.oceania { background: linear-gradient(145deg, #eefbff, #ffffff); }
+
+.details-page {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+  padding: 40px 0 70px;
+}
+
+.details-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+  transition: 0.3s ease;
+}
+
+.details-hero:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 38px 85px rgba(255, 122, 69, 0.16);
+}
+
+.details-title h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.flag-icon {
+  width: 46px;
+  height: 32px;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+.about-text {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #536763;
+}
+
+.quick-line {
+  margin-top: 16px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #ff7a45;
+  background: rgba(255, 122, 69, 0.12);
+  padding: 10px 16px;
+  border-radius: 999px;
+}
+
+
+.image-box {
+  width: 100%;
+  max-width: 400px;
+}
+
+.country-main-img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
+.back-link {
+  display: block;
+  width: fit-content;
+  margin: 35px auto 0;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff7a45, #ffb347);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 12px 25px rgba(255, 122, 69, 0.25);
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.back-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 35px rgba(255, 122, 69, 0.35);
+}
+
+.back-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(255,255,255,0.22);
+  transition: 0.4s;
+}
+
+.back-link:hover::after {
+  width: 100%;
+}
+
+.details-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 26px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 38px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,122,69,0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-card ul {
+  flex-grow: 1;
+}
+
+.detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(255, 122, 69, 0.18);
+}
+
+.detail-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,122,69,0.16), transparent);
+  opacity: 0;
+  transition: 0.4s;
+  pointer-events: none;
+}
+
+.detail-card:hover::before {
+  opacity: 1;
+}
+
+.detail-card:nth-child(2) {
+  background: linear-gradient(145deg, #fff7e8, #ffffff);
+}
+
+.detail-card:nth-child(3) {
+  background: linear-gradient(145deg, #eefbff, #ffffff);
+}
+
+.detail-card:nth-child(4) {
+  background: linear-gradient(145deg, #f3fff3, #ffffff);
+}
+
+.detail-card h3 {
+  font-size: 23px;
+  margin-bottom: 14px;
+  color: #18302f;
+}
+
+.detail-card p,
+.detail-card li {
+  color: #536763;
+  line-height: 1.7;
+  font-size: 15.5px;
+}
+
+.detail-card li {
+  position: relative;
+  padding-left: 18px;
+  list-style: none;
+}
+
+.detail-card li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #ff7a45;
+  font-size: 12px;
+}
+
+.detail-card.transport-card {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #ffe5d6, #ffffff);
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-card.transport-card h3 {
+  color: #18302f;
+}
+
+.detail-card.transport-card p,
+.detail-card.transport-card strong {
+  color: #536763;
+}
+
+.detail-card.transport-card::after {
+  content: "✈";
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  font-size: 90px;
+  color: rgba(255, 122, 69, 0.18);
+  transform: rotate(-18deg);
+}
+
+@media (max-width: 1000px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+  }
+
+  .details-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image-box {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .country-main-img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .details-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .transport-card {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 850px) {
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .zone-row.top .zone-card,
+  .zone-row.bottom .zone-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-wrapper,
+  .details-page {
+    width: 92%;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .details-hero {
+    padding: 22px;
+  }
+
+  .details-title h1 {
+    font-size: 30px;
+  }
+
+  .zone-card {
+    width: 100% !important;
+  }
+
+  .image-box {
+    max-width: 240px;
+  }
+
+  .country-main-img {
+    max-width: 240px;
+  }
+}
