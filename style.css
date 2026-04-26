@@ -610,6 +610,6 @@ body {
     font-size: 70px;
     color: transparent; /* نخفي اللون */
     text-shadow: 0 0 10px rgba(255, 122, 69, 0.15);
-    opacity: 0.3;
+    opacity: 1;
   }
 }
