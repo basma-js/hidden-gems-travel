@@ -595,3 +595,9 @@ body {
     max-width: 240px;
   }
 }
+@media (hover: none) {
+  .country-tags {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
