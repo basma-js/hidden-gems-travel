@@ -603,13 +603,9 @@ body {
 }
 @media (hover: none) {
   .detail-card.transport-card::after {
-    font-size: 120px;
+    font-size: 100px;
     right: 10px;
     bottom: 10px;
-    opacity: 0.08;
-  }
-
-  .detail-card.transport-card {
-    padding-right: 20px;
+    color: rgba(255, 122, 69, 0.06);
   }
 }
