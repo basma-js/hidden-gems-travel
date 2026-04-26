@@ -601,3 +601,15 @@ body {
     transform: translateY(0);
   }
 }
+@media (hover: none) {
+  .detail-card.transport-card::after {
+    font-size: 120px;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0.08;
+  }
+
+  .detail-card.transport-card {
+    padding-right: 20px;
+  }
+}
